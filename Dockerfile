@@ -23,14 +23,6 @@ ENV LC_ALL=en_US.UTF-8 \
 ADD saltyrtc-server-launcher /usr/local/bin/saltyrtc-server-launcher
 RUN chmod +x /usr/local/bin/saltyrtc-server-launcher
 
-# Create non-root user
-RUN useradd ci \
-    --shell /bin/bash  \
-    --create-home \
- && usermod -a -G sudo ci \
- && echo 'ALL ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers \
- && echo 'ci:secret' | chpasswd
-
 # Create test certificates
 ADD generate-cert.sh /saltyrtc/certs/generate-cert.sh
 RUN bash /saltyrtc/certs/generate-cert.sh && \
@@ -41,9 +33,6 @@ RUN chmod a+w /saltyrtc
 
 # Install SaltyRTC server
 RUN pip3 install saltyrtc.server[logging]
-
-# Switch user
-USER ci
 
 # Install cargo-audit
 RUN cargo install cargo-audit
