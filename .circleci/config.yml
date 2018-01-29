@@ -17,6 +17,6 @@ jobs:
       - deploy:
           name: Push Docker image
           command: |
-            docker login -u $DOCKER_EMAIL -p $DOCKER_API_KEY && \
+            docker login -u $DOCKER_USER -p $DOCKER_API_KEY && \
             docker push saltyrtc/circleci-image-rs
 
