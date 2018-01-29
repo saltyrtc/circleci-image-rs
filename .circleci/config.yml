@@ -19,4 +19,15 @@ jobs:
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_API_KEY && \
             docker push saltyrtc/circleci-image-rs
-
+workflows:
+  version: 2
+  weekly:
+    triggers:
+      - schedule:
+        cron: "0 4 * * 0"
+        filters:
+          branches:
+            only:
+              - master
+    jobs:
+      - build
