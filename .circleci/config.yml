@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /build
     docker:
-      - image: docker:stable
+      image: docker:stable
       steps:
         - checkout
         - setup_remote_docker
