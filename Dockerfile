@@ -25,8 +25,6 @@ RUN chmod +x /usr/local/bin/saltyrtc-server-launcher
 
 # Create test certificates
 ADD generate-cert.sh /saltyrtc/certs/generate-cert.sh
-RUN bash /saltyrtc/certs/generate-cert.sh && \
-    chmod a+r /saltyrtc/certs/*
 
 # Update directory permissions
 RUN chmod a+w /saltyrtc

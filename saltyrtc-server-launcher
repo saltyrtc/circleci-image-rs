@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ ! -f /saltyrtc/certs/saltyrtc.crt ]; then
+    echo 'Certificate not found. Please run `generate-cert.sh` first.'
+    exit 1
+fi
+
+set -x
 saltyrtc-server \
     -v 6 \
     serve \

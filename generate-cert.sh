@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 openssl req \
     -newkey rsa:1024 \
     -x509 \
@@ -13,3 +14,4 @@ openssl req \
         <(printf '[SAN]\nsubjectAltName=DNS:localhost')) \
     -sha256 \
     -days 3
+openssl x509 -in /saltyrtc/certs/saltyrtc.crt -outform der -out /saltyrtc/certs/saltyrtc.der
