@@ -23,22 +23,22 @@ workflows:
   version: 2
 
   # Build on push to master
-  on-push:
+  on_push:
     jobs:
       - build:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
 
   # Build every week on Monday at 04:00 am
   weekly:
     triggers:
       - schedule:
-        cron: "0 4 * * 1"
-        filters:
-          branches:
-            only:
-              - master
+          cron: "0 4 * * 1"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - build
