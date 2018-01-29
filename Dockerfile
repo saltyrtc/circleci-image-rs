@@ -21,13 +21,12 @@ ENV LC_ALL=en_US.UTF-8 \
 
 # Add wrapper scripts
 ADD saltyrtc-server-launcher /usr/local/bin/saltyrtc-server-launcher
-RUN chmod +x /usr/local/bin/saltyrtc-server-launcher
-
-# Create test certificates
 ADD generate-cert.sh /saltyrtc/certs/generate-cert.sh
 
-# Update directory permissions
-RUN chmod a+w /saltyrtc
+# Update permissions
+RUN chmod a+w /saltyrtc &&
+    chmod a+x /saltyrtc/certs/generate-cert.sh &&
+    chmod a+x /usr/local/bin/saltyrtc-server-launcher
 
 # Install SaltyRTC server
 RUN pip3 install saltyrtc.server[logging]
