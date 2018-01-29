@@ -24,8 +24,8 @@ ADD saltyrtc-server-launcher /usr/local/bin/saltyrtc-server-launcher
 ADD generate-cert.sh /saltyrtc/certs/generate-cert.sh
 
 # Update permissions
-RUN chmod a+w /saltyrtc &&
-    chmod a+x /saltyrtc/certs/generate-cert.sh &&
+RUN chmod a+w /saltyrtc && \
+    chmod a+x /saltyrtc/certs/generate-cert.sh && \
     chmod a+x /usr/local/bin/saltyrtc-server-launcher
 
 # Install SaltyRTC server
