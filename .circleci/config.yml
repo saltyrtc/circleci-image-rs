@@ -21,10 +21,21 @@ jobs:
             docker push saltyrtc/circleci-image-rs
 workflows:
   version: 2
+
+  # Build on push to master
+  on-push:
+    jobs:
+      - build:
+        filters:
+          branches:
+            only:
+              - master
+
+  # Build every week on Monday at 04:00 am
   weekly:
     triggers:
       - schedule:
-        cron: "0 4 * * 0"
+        cron: "0 4 * * 1"
         filters:
           branches:
             only:
