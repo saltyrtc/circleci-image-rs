@@ -8,6 +8,8 @@ Additions:
 - saltyrtc-server-python
 - libsodium
 - cargo-audit
+- cmake
+- make
 - meson
 - ninja
 - valgrind

@@ -6,6 +6,8 @@ RUN apt-get update -qqy \
     locales \
     libsodium18 \
     libsodium-dev \
+    make \
+    cmake \
     meson \
     ninja-build \
     valgrind \
