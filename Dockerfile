@@ -8,6 +8,7 @@ RUN apt-get update -qqy \
     libsodium-dev \
     meson \
     ninja-build \
+    valgrind \
     python3 \
     python3-pip \
     python3-setuptools \

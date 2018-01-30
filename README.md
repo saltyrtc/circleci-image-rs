@@ -10,6 +10,7 @@ Additions:
 - cargo-audit
 - meson
 - ninja
+- valgrind
 
 <!-- Badges -->
 [circle-ci]: https://circleci.com/gh/saltyrtc/circleci-image-rs/tree/master
