@@ -6,6 +6,8 @@ RUN apt-get update -qqy \
     locales \
     libsodium18 \
     libsodium-dev \
+    meson \
+    ninja-build \
     python3 \
     python3-pip \
     python3-setuptools \

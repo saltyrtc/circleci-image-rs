@@ -8,6 +8,8 @@ Additions:
 - saltyrtc-server-python
 - libsodium
 - cargo-audit
+- meson
+- ninja
 
 <!-- Badges -->
 [circle-ci]: https://circleci.com/gh/saltyrtc/circleci-image-rs/tree/master
