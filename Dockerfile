@@ -10,8 +10,8 @@ RUN apt-get update -qqy \
     cmake \
     meson \
     ninja-build \
+    flex \
     valgrind \
-    splint \
     python3 \
     python3-pip \
     python3-setuptools \
@@ -39,6 +39,22 @@ RUN pip3 install saltyrtc.server[logging]
 
 # Install cargo-audit
 RUN cargo install cargo-audit
+
+# Install splint
+#
+# Debian package seems broken, results in parse error.
+# Build instructions taken from
+# https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/splint
+RUN cd /opt && \
+    git clone https://repo.or.cz/splint-patched.git && \
+    cd splint-patched && \
+    $(automake --add-missing || true) && \
+    $(autoreconf || true) && \
+    automake --add-missing && \
+    autoreconf && \
+    ./configure --prefix=/usr --mandir=/usr/share/man && \
+    make && \
+    make install
 
 # Export SaltyRTC test permanent key
 ENV SALTYRTC_SERVER_PERMANENT_KEY=0919b266ce1855419e4066fc076b39855e728768e3afa773105edd2e37037c20
