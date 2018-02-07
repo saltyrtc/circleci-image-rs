@@ -11,6 +11,7 @@ RUN apt-get update -qqy \
     meson \
     ninja-build \
     flex \
+    bison \
     valgrind \
     python3 \
     python3-pip \
