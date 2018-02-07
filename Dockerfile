@@ -46,7 +46,7 @@ RUN cargo install cargo-audit
 # Build instructions taken from
 # https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/splint
 RUN cd /opt && \
-    git clone https://repo.or.cz/splint-patched.git && \
+    GIT_SSL_NO_VERIFY=true git clone http://repo.or.cz/splint-patched.git && \
     cd splint-patched && \
     $(automake --add-missing || true) && \
     $(autoreconf || true) && \
