@@ -11,6 +11,7 @@ RUN apt-get update -qqy \
     meson \
     ninja-build \
     valgrind \
+    splint \
     python3 \
     python3-pip \
     python3-setuptools \

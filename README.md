@@ -3,16 +3,28 @@
 
 Docker image for CircleCI, based on the official `rust` image.
 
-Additions:
+## Additions
+
+**SaltyRTC**
 
 - saltyrtc-server-python
 - libsodium
-- cargo-audit
+
+**C tools**
+
 - cmake
 - make
 - meson
 - ninja
+
+**Rust tools**
+
+- cargo-audit
+
+**Code analysis**
+
 - valgrind
+- splint
 
 <!-- Badges -->
 [circle-ci]: https://circleci.com/gh/saltyrtc/circleci-image-rs/tree/master
