@@ -6,6 +6,7 @@ RUN apt-get update -qqy \
     locales \
     libsodium18 \
     libsodium-dev \
+    clang \
     make \
     cmake \
     meson \

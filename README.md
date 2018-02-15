@@ -12,6 +12,7 @@ Docker image for CircleCI, based on the official `rust` image.
 
 **C tools**
 
+- clang
 - cmake
 - make
 - meson
