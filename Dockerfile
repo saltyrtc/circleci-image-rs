@@ -1,4 +1,4 @@
-FROM rust:1.23
+FROM rust:1.26
 
 # Base dependencies
 RUN apt-get update -qqy \
