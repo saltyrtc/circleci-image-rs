@@ -40,7 +40,7 @@ RUN chmod a+w /saltyrtc && \
 RUN pip3 install saltyrtc.server[logging]
 
 # Install cargo-audit
-RUN cargo install cargo-audit
+RUN cargo install -f cargo-audit
 
 # Install splint
 #
