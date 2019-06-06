@@ -13,7 +13,6 @@ RUN apt-get update -qqy \
     ninja-build \
     flex \
     bison \
-    valgrind \
     python3 \
     python3-pip \
     python3-setuptools \
@@ -41,6 +40,14 @@ RUN pip3 install saltyrtc.server[logging]
 
 # Install cargo-audit
 RUN cargo install -f cargo-audit
+
+# Install valgrind
+RUN wget https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2 && \
+    tar xf valgrind-3.15.0.tar.bz2 && \
+    cd valgrind-3.15.0 && \
+    ./configure && \
+    make && \
+    make install
 
 # Install splint
 #
