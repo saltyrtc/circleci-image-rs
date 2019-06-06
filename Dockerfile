@@ -13,6 +13,7 @@ RUN apt-get update -qqy \
     ninja-build \
     flex \
     bison \
+    libc6-dbg \
     python3 \
     python3-pip \
     python3-setuptools \
