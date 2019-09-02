@@ -1,10 +1,10 @@
-FROM rust:1.36
+FROM rust:1.36-buster
 
 # Base dependencies
 RUN apt-get update -qqy \
  && apt-get install -qqy --no-install-recommends \
     locales \
-    libsodium18 \
+    libsodium23 \
     libsodium-dev \
     clang \
     make \
