@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 openssl req \
-    -newkey rsa:1024 \
+    -newkey rsa:2048 \
     -x509 \
     -nodes \
     -keyout /saltyrtc/certs/saltyrtc.key \
