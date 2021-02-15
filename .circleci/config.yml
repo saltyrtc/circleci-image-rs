@@ -1,4 +1,5 @@
-version: 2
+version: 2.1
+
 jobs:
   build:
     docker:
@@ -6,6 +7,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run:
+          name: Debug information
+          command: 'echo -e "Circle branch: ${CIRCLE_BRANCH}\nDocker login: ${DOCKER_LOGIN}"'
       - run:
           name: Build Docker image
           command: |
@@ -18,8 +22,9 @@ jobs:
       - deploy:
           name: Push Docker image
           command: |
-            docker login -u $DOCKER_USER -p $DOCKER_API_KEY && \
+            docker login -u $DOCKER_LOGIN -p $DOCKER_ACCESS_TOKEN && \
             docker push saltyrtc/circleci-image-rs
+
 workflows:
   version: 2
 
@@ -27,6 +32,7 @@ workflows:
   on_push:
     jobs:
       - build:
+          context: Docker Hub Upload
           filters:
             branches:
               only:
@@ -42,4 +48,5 @@ workflows:
               only:
                 - master
     jobs:
-      - build
+      - build:
+          context: Docker Hub Upload
