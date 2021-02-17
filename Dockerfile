@@ -40,7 +40,7 @@ RUN chmod a+w /saltyrtc && \
 RUN pip3 install saltyrtc.server[logging]
 
 # Install cargo-audit
-RUN cargo install -f cargo-audit
+RUN cargo install --git https://github.com/rustsec/cargo-audit --tag v0.13.1 --locked
 
 # Install valgrind
 RUN wget https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2 && \
