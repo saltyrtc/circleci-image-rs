@@ -39,6 +39,9 @@ RUN chmod a+w /saltyrtc && \
 # Install SaltyRTC server
 RUN pip3 install saltyrtc.server[logging]
 
+# Install rustfmt
+RUN rustup component add rustfmt
+
 # Install cargo-audit
 RUN cargo install --git https://github.com/rustsec/cargo-audit --tag v0.13.1 --locked
 
