@@ -15,9 +15,9 @@ jobs:
           command: |
             docker build \
               --no-cache \
-              -t saltyrtc/circleci-image-rs:1.41 \
+              -t saltyrtc/circleci-image-rs:latest \
+              -t saltyrtc/circleci-image-rs:1.57 \
               .
-              #-t saltyrtc/circleci-image-rs:latest \
               #-t saltyrtc/circleci-image-rs:${CIRCLE_BRANCH} \
       - deploy:
           name: Push Docker image

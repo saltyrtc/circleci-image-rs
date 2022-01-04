@@ -1,4 +1,4 @@
-FROM rust:1.41.1-buster
+FROM rust:1.57.0-buster
 
 # Base dependencies
 RUN apt-get update -qqy \
@@ -43,7 +43,7 @@ RUN pip3 install saltyrtc.server[logging]
 RUN rustup component add rustfmt
 
 # Install cargo-audit
-RUN cargo install --git https://github.com/rustsec/cargo-audit --tag cargo-audit/v0.13.1 --locked
+RUN cargo install --git https://github.com/rustsec/cargo-audit --tag cargo-audit/v0.16.0 --locked
 
 # Install valgrind
 RUN wget https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2 && \
