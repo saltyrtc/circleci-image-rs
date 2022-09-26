@@ -16,7 +16,7 @@ jobs:
             docker build \
               --no-cache \
               -t saltyrtc/circleci-image-rs:latest \
-              -t saltyrtc/circleci-image-rs:1.57 \
+              -t saltyrtc/circleci-image-rs:1.63 \
               .
               #-t saltyrtc/circleci-image-rs:${CIRCLE_BRANCH} \
       - deploy:

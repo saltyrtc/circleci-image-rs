@@ -1,4 +1,4 @@
-FROM rust:1.57.0-buster
+FROM rust:1.63.0-buster
 
 # Base dependencies
 RUN apt-get update -qqy \
